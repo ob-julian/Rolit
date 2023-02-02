@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', function () {
 let player1, player2, player3, player4;
 let players;
 let playable = false;
-const skip = false;
+const skip = true;
 let idiotenModus = true;
 let undo = true;
 let count = 1;
@@ -308,43 +308,43 @@ function move(feld){
         if (round === 60) {
             playable = false;
             //console.log("end");
-            let winColorArrray = [p1,p2,p3,p4];
-            winColorArrray.sort((a, b) => b[0] - a[0]);
-            //console.log(winColorArrray);
-            if(winColorArrray[0][0] === winColorArrray[1][0] && winColorArrray[1][0] === winColorArrray[2][0] && winColorArrray[2][0] === winColorArrray[3][0] && player3 && player4) {
-                document.getElementById("infos").innerHTML = "Spiel beendet:<br>Gewonnen haben alle also:<span class=\"c" + winColorArrray[0][1] + " \">" + whatPlayer(winColorArrray[0][1])[1] + "</span>, <span class=\"c" + winColorArrray[1][1] + " \">" + whatPlayer(winColorArrray[1][1])[1] + "</span> und <span class=\"c" + winColorArrray[2][1] + " \">" + whatPlayer(winColorArrray[2][1])[1] + "</span> und <span class=\"c" + winColorArrray[3][1] + " \">" + whatPlayer(winColorArrray[3][1])[1] + "</span> mit jeweils <span class=\"c" + winColorArrray[0][1] + " \">" + winColorArrray[0][0] + " Punkten</span>.";
+            let winColorArray = [p1,p2,p3,p4];
+            winColorArray.sort((a, b) => b[0] - a[0]);
+            //console.log(winColorArray);
+            if(winColorArray[0][0] === winColorArray[1][0] && winColorArray[1][0] === winColorArray[2][0] && winColorArray[2][0] === winColorArray[3][0] && player3 && player4) {
+                document.getElementById("infos").innerHTML = "Spiel beendet:<br>Gewonnen haben alle also:<span class=\"c" + winColorArray[0][1] + " \">" + whatPlayer(winColorArray[0][1])[1] + "</span>, <span class=\"c" + winColorArray[1][1] + " \">" + whatPlayer(winColorArray[1][1])[1] + "</span> und <span class=\"c" + winColorArray[2][1] + " \">" + whatPlayer(winColorArray[2][1])[1] + "</span> und <span class=\"c" + winColorArray[3][1] + " \">" + whatPlayer(winColorArray[3][1])[1] + "</span> mit jeweils <span class=\"c" + winColorArray[0][1] + " \">" + winColorArray[0][0] + " Punkten</span>.";
                 return;
             }
-            else if(winColorArrray[0][0] === winColorArrray[1][0] && winColorArrray[1][0] === winColorArrray[2][0] && player3)
-                document.getElementById("infos").innerHTML = "Spiel beendet:<br>Gewonnen haben <span class=\"c" + winColorArrray[0][1] + " \">" + whatPlayer(winColorArrray[0][1])[1] + "</span>, <span class=\"c" + winColorArrray[1][1] + " \">" + whatPlayer(winColorArrray[1][1])[1] + "</span> und <span class=\"c" + winColorArrray[2][1] + " \">" + whatPlayer(winColorArrray[2][1])[1] + "</span> mit jeweils <span class=\"c" + winColorArrray[0][1] + " \">" + winColorArrray[0][0] + " Punkten</span>.";
-            else if(winColorArrray[0][0] === winColorArrray[1][0])
-                document.getElementById("infos").innerHTML = "Spiel beendet:<br>Gewonnen haben <span class=\"c" + winColorArrray[0][1] + " \">" + whatPlayer(winColorArrray[0][1])[1] + "</span> und <span class=\"c" + winColorArrray[1][1] + " \">" + whatPlayer(winColorArrray[1][1])[1] + "</span> mit jeweils <span class=\"c" + winColorArrray[0][1] + " \">" + winColorArrray[0][0] + " Punkten</span>.";
+            else if(winColorArray[0][0] === winColorArray[1][0] && winColorArray[1][0] === winColorArray[2][0] && player3)
+                document.getElementById("infos").innerHTML = "Spiel beendet:<br>Gewonnen haben <span class=\"c" + winColorArray[0][1] + " \">" + whatPlayer(winColorArray[0][1])[1] + "</span>, <span class=\"c" + winColorArray[1][1] + " \">" + whatPlayer(winColorArray[1][1])[1] + "</span> und <span class=\"c" + winColorArray[2][1] + " \">" + whatPlayer(winColorArray[2][1])[1] + "</span> mit jeweils <span class=\"c" + winColorArray[0][1] + " \">" + winColorArray[0][0] + " Punkten</span>.";
+            else if(winColorArray[0][0] === winColorArray[1][0])
+                document.getElementById("infos").innerHTML = "Spiel beendet:<br>Gewonnen haben <span class=\"c" + winColorArray[0][1] + " \">" + whatPlayer(winColorArray[0][1])[1] + "</span> und <span class=\"c" + winColorArray[1][1] + " \">" + whatPlayer(winColorArray[1][1])[1] + "</span> mit jeweils <span class=\"c" + winColorArray[0][1] + " \">" + winColorArray[0][0] + " Punkten</span>.";
 
             else
-                document.getElementById("infos").innerHTML = "Spiel beendet:<br>Gewonnen hat <span class=\"c" + winColorArrray[0][1] + " \">" + whatPlayer(winColorArrray[0][1])[1] + "</span> mit <span class=\"c" + winColorArrray[0][1] + " \">" + winColorArrray[0][0] + " Punkten</span>.";
+                document.getElementById("infos").innerHTML = "Spiel beendet:<br>Gewonnen hat <span class=\"c" + winColorArray[0][1] + " \">" + whatPlayer(winColorArray[0][1])[1] + "</span> mit <span class=\"c" + winColorArray[0][1] + " \">" + winColorArray[0][0] + " Punkten</span>.";
 
-            if(winColorArrray[0][0] !== winColorArrray[1][0]) {
-                if (winColorArrray[1][0] === winColorArrray[2][0] && winColorArrray[2][0] === winColorArrray[3][0] && player3 && player4) {
-                    document.getElementById("infos").innerHTML += "<br>Zweiter mit <span class=\"c" + winColorArrray[1][1] + " \">" + winColorArrray[1][0] + " Punkten</span> sind <span class=\"c" + winColorArrray[1][1] + " \">" + whatPlayer(winColorArrray[1][1])[1] + "</span>, <span class=\"c" + winColorArrray[2][1] + " \">" + whatPlayer(winColorArrray[2][1])[1] + "</span> und <span class=\"c" + winColorArrray[3][1] + " \">" + whatPlayer(winColorArrray[3][1])[1] + "</span> geworden.";
+            if(winColorArray[0][0] !== winColorArray[1][0]) {
+                if (winColorArray[1][0] === winColorArray[2][0] && winColorArray[2][0] === winColorArray[3][0] && player3 && player4) {
+                    document.getElementById("infos").innerHTML += "<br>Zweiter mit <span class=\"c" + winColorArray[1][1] + " \">" + winColorArray[1][0] + " Punkten</span> sind <span class=\"c" + winColorArray[1][1] + " \">" + whatPlayer(winColorArray[1][1])[1] + "</span>, <span class=\"c" + winColorArray[2][1] + " \">" + whatPlayer(winColorArray[2][1])[1] + "</span> und <span class=\"c" + winColorArray[3][1] + " \">" + whatPlayer(winColorArray[3][1])[1] + "</span> geworden.";
                     return;
                 }
-                else if (winColorArrray[1][0] === winColorArrray[2][0] && player3)
-                    document.getElementById("infos").innerHTML += "<br>Zweiter mit <span class=\"c" + winColorArrray[1][1] + " \">" + winColorArrray[1][0] + " Punkten</span> sind <span class=\"c" + winColorArrray[1][1] + " \">" + whatPlayer(winColorArrray[1][1])[1] + "</span> und <span class=\"c" + winColorArrray[2][1] + " \">" + whatPlayer(winColorArrray[2][1])[1] + "</span> geworden.";
+                else if (winColorArray[1][0] === winColorArray[2][0] && player3)
+                    document.getElementById("infos").innerHTML += "<br>Zweiter mit <span class=\"c" + winColorArray[1][1] + " \">" + winColorArray[1][0] + " Punkten</span> sind <span class=\"c" + winColorArray[1][1] + " \">" + whatPlayer(winColorArray[1][1])[1] + "</span> und <span class=\"c" + winColorArray[2][1] + " \">" + whatPlayer(winColorArray[2][1])[1] + "</span> geworden.";
                 else
-                    document.getElementById("infos").innerHTML += "<br>Zweiter mit <span class=\"c" + winColorArrray[1][1] + " \">" + winColorArrray[1][0] + " Punkten</span> ist <span class=\"c" + winColorArrray[1][1] + " \">" + whatPlayer(winColorArrray[1][1])[1] + "</span> geworden.";
+                    document.getElementById("infos").innerHTML += "<br>Zweiter mit <span class=\"c" + winColorArray[1][1] + " \">" + winColorArray[1][0] + " Punkten</span> ist <span class=\"c" + winColorArray[1][1] + " \">" + whatPlayer(winColorArray[1][1])[1] + "</span> geworden.";
             }
 
-            if(player3 &&  winColorArrray[1][0] !== winColorArrray[2][0]) {
-                if (winColorArrray[2][0] === winColorArrray[3][0]) {
-                    document.getElementById("infos").innerHTML += "<br><span class=\"c" + winColorArrray[2][1] + " \">" + whatPlayer(winColorArrray[2][1])[1] + "</span> und <span class=\"c" + winColorArrray[3][1] + " \">" + whatPlayer(winColorArrray[3][1])[1] + "</span> sind dritter geworden mit <span class=\"c" + winColorArrray[2][1] + " \">" + winColorArrray[2][0] + "</span> Punkten.";
+            if(player3 &&  winColorArray[1][0] !== winColorArray[2][0]) {
+                if (winColorArray[2][0] === winColorArray[3][0]) {
+                    document.getElementById("infos").innerHTML += "<br><span class=\"c" + winColorArray[2][1] + " \">" + whatPlayer(winColorArray[2][1])[1] + "</span> und <span class=\"c" + winColorArray[3][1] + " \">" + whatPlayer(winColorArray[3][1])[1] + "</span> sind dritter geworden mit <span class=\"c" + winColorArray[2][1] + " \">" + winColorArray[2][0] + "</span> Punkten.";
                     return;
                 } else if (player3)
-                    document.getElementById("infos").innerHTML += "<br><span class=\"c" + winColorArrray[2][1] + " \">" + whatPlayer(winColorArrray[2][1])[1] + "</span> ist dritter geworden mit <span class=\"c" + winColorArrray[2][1] + " \">" + winColorArrray[2][0] + "</span> Punkten.";
+                    document.getElementById("infos").innerHTML += "<br><span class=\"c" + winColorArray[2][1] + " \">" + whatPlayer(winColorArray[2][1])[1] + "</span> ist dritter geworden mit <span class=\"c" + winColorArray[2][1] + " \">" + winColorArray[2][0] + "</span> Punkten.";
             }
-            if(player4 &&  winColorArrray[2][0] !== winColorArrray[3][0])
-                document.getElementById("infos").innerHTML += "Mit <span class=\"c" + winColorArrray[3][1] + " \">" + winColorArrray[3][0] + " Punkten </span> ist <span class=\"c" + winColorArrray[3][1] + " \">" + whatPlayer(winColorArrray[3][1])[1] + "</span> letzter geworden.";
+            if(player4 &&  winColorArray[2][0] !== winColorArray[3][0])
+                document.getElementById("infos").innerHTML += "Mit <span class=\"c" + winColorArray[3][1] + " \">" + winColorArray[3][0] + " Punkten </span> ist <span class=\"c" + winColorArray[3][1] + " \">" + whatPlayer(winColorArray[3][1])[1] + "</span> letzter geworden.";
 
-            document.getElementById("infos").innerHTML += "<biv id='buttonDiv'><button onclick='initialize()'>Nochmals Spielen/neue Runde</button><button onclick='reset()'>Neues Spiel</button><button onclick='replay()'>Wiederholung ansehen</button></div";
+            document.getElementById("infos").innerHTML += "<biv id='buttonDiv'><button onclick='initialize()'>Neue Runde</button><button onclick='replay()'>Wiederholung ansehen</button></div";
             document.getElementById("redo").style.display = "none";
 
         }
@@ -391,7 +391,7 @@ function checkLine(x, y, sx, sy, c){
 
 function whatPlayer(color){
     for (const element of players) {
-        if(element[0]==color)
+        if(element[0] == color)
             return element;
     }
 }
@@ -559,6 +559,7 @@ function replay(){
     replaying = true;
     tmpinfo = document.getElementById("infos").innerHTML;
     document.getElementById("infos").innerHTML = "<br><div style='display: flex'><button id='c1' class='player' onclick='cont1()'>|◀</button> <button id='c2' class='player' onclick='cont2()'><</button> <button id='c3' class='player' onclick='cont3()'>▶</button><button style='display: none' id='c4' class='player' onclick='cont4()'>❚❚</button> <button id='c5' class='player' onclick='cont5()'>></button> <button id='c6' class='player' onclick='cont6()'>▶|</button> <button id='c7' class='player' onclick='cont7()'>■</button></div>";
+    document.getElementById("zruck").style.display = "none";
     cont1();
 }
 
@@ -635,6 +636,7 @@ function cont7(){
     cont6();
     replaying = false;
     document.getElementById("infos").innerHTML = tmpinfo;
+    document.getElementById("zruck").style.display = "block";
 }
 
 function autoplay(){

@@ -41,6 +41,7 @@ button:active{
 
 #buttonDiv{
     display: flex;
+    margin: 10px 0;
 }
 
 #error1{
