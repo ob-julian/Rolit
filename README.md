@@ -14,4 +14,5 @@ If you draw a straight line in every of the 8 direction and hit a "O" in your co
 
 If you are unable to place a "O" by the rules stated above you can put your new "O" in an empty square that is just connected to other none empty squares.
 ## Where to play:
-[https://oberhofer.ddns.net/rolit/](https://oberhofer.ddns.net/rolit/)
+[https://oberhofer.ddns.net/rolit/](https://oberhofer.ddns.net/rolit/)  
+or just download this repo and execute localy.
