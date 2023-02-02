@@ -1,0 +1,163 @@
+body{
+    font-size: 1.5em;
+    margin: 15px;
+}
+
+#layer1 select, #layer1 input, button {
+    font-size: 0.8em;
+    padding: .6em .8em .5em .8em;
+    max-width: 100%;
+    box-sizing: border-box;
+    margin: 0;
+    border: 1px solid #aaa;
+    box-shadow: 0 1px 0 1px rgba(0,0,0,.04);
+    border-radius: .5em;
+    display: block;
+    background: linear-gradient(to bottom, #ffffff 0%,#e5e5e5 100%);
+}
+
+#layer1 select{
+    padding: .6em 1.4em .5em .8em;
+}
+
+button{
+    margin-bottom: 0.1em;
+    margin-top: 0;
+}
+
+button:hover{
+    box-shadow: 0 1px 0 1px rgba(0,0,0,.4);
+    background: linear-gradient(to bottom, #ffffff 0%,#ddd 100%);
+}
+
+button:active{
+    margin-top: 0.1em;
+    margin-bottom: 0;
+}
+
+#layer2 button{
+    margin-right: 10px;
+}
+
+#buttonDiv{
+    display: flex;
+}
+
+#error1{
+    color: orangered;
+    position: absolute;
+}
+
+/*[value="1"]{
+    background-color: red;
+}
+[value="2"]{
+    background-color: green;
+}
+[value="3"]{
+    background-color: blue;
+    color: white;
+}
+[value="4"]{
+     background-color: yellow;
+}*/
+[value="0"]{
+    background-color: lightgray;
+}
+
+.playerAuswahl{
+    display: flex;
+}
+
+.playerAuswahl>label{
+    margin: auto 10px;
+}
+
+#layer2 td{
+    height: 9vmin;
+    width: 9vmin;
+    border: 10px solid black;
+    -ms-user-select: None;
+    -moz-user-select: None;
+    -webkit-user-select: None;
+    user-select: None;
+    outline: 0;
+}
+
+#layer2 td, #layer2 tr{
+    border-collapse: collapse;
+    font-size: 7vmin;
+    text-align: center;
+    outline: 0;
+}
+
+table{
+    border-collapse: collapse;
+}
+
+.c1{
+    color: red;
+}
+
+.c4{
+    color: yellow;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+
+.c3{
+    color: blue;
+}
+
+.c2{
+    color: green;
+}
+
+input[type="checkbox"] {
+    display: none !important;
+}
+
+input[type="checkbox"]+label {
+    position: relative;
+    display: inline-flex;
+    cursor: pointer;
+    line-height: 1.3;
+    margin-right: 2px;
+    margin-left: 2px;
+}
+
+input[type="checkbox"]+label:before {
+    width: 60px;
+    height: 30px;
+    border-radius: 30px;
+    border: 2px solid #ddd;
+    background-color: #EEE;
+    content: "";
+    margin-right: 7.5px;
+    transition: background-color 0.5s linear;
+}
+
+input[type="checkbox"]+label:after {
+    width: 30px;
+    height: 30px;
+    border-radius: 30px;
+    background-color: #fff;
+    content: "";
+    transition: margin 0.1s linear;
+    box-shadow: 0 0 5px #aaa;
+    position: absolute;
+    left: 2px;
+    top: 2px;
+}
+
+input[type="checkbox"]:checked+label:before {
+    background-color: #2b8718;
+}
+
+input[type="checkbox"]:checked+label:after {
+    margin: 0 0 0 30px;
+}
+
+.player{
+    height: 3em;
+    width: 3em;
+}
