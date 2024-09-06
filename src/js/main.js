@@ -342,7 +342,7 @@ function move(feld){
                     document.getElementById("infos").innerHTML += "<br><span class=\"c" + winColorArray[2][1] + " \">" + whatPlayer(winColorArray[2][1])[1] + "</span> ist dritter geworden mit <span class=\"c" + winColorArray[2][1] + " \">" + winColorArray[2][0] + "</span> Punkten.";
             }
             if(player4 &&  winColorArray[2][0] !== winColorArray[3][0])
-                document.getElementById("infos").innerHTML += "Mit <span class=\"c" + winColorArray[3][1] + " \">" + winColorArray[3][0] + " Punkten </span> ist <span class=\"c" + winColorArray[3][1] + " \">" + whatPlayer(winColorArray[3][1])[1] + "</span> letzter geworden.";
+                document.getElementById("infos").innerHTML += "<br>Mit <span class=\"c" + winColorArray[3][1] + " \">" + winColorArray[3][0] + " Punkten </span> ist <span class=\"c" + winColorArray[3][1] + " \">" + whatPlayer(winColorArray[3][1])[1] + "</span> letzter geworden.";
 
             document.getElementById("infos").innerHTML += "<biv id='buttonDiv'><button onclick='initialize()'>Neue Runde</button><button onclick='replay()'>Wiederholung ansehen</button></div";
             document.getElementById("redo").style.display = "none";
