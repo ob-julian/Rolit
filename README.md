@@ -28,7 +28,7 @@ If you draw a straight line in any of the 8 directions and hit an "O" in your co
 If you are unable to place an "O" by the rules stated above, you can put your new "O" in an empty square that is just connected to other non-empty squares.
 
 ### Where to play:
-[https://oberhofer.ddns.net/rolit/](https://oberhofer.ddns.net/rolit/)  
+[https://oberflow.dev/rolit/](https://oberflow.dev/rolit/)  
 or just download this repo and execute [index.html](src/index.html) locally.
 ## Deutsch
 
@@ -48,5 +48,5 @@ Wenn du eine gerade Linie in eine der 8 Richtungen ziehst und ein "O" in deiner 
 Wenn du kein "O" nach den oben genannten Regeln platzieren kannst, kannst du dein neues "O" in ein leeres Quadrat setzen, das nur mit anderen nicht leeren Quadraten verbunden ist.
 
 ### Wo zu spielen:
-[https://oberhofer.ddns.net/rolit/](https://oberhofer.ddns.net/rolit/)  
+[https://oberflow.dev/rolit/](https://oberflow.dev/rolit/)  
 oder lade einfach dieses Repo herunter und führe [index.html](src/index.html) lokal aus.
